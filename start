@@ -1,25 +1,25 @@
 #!/bin/bash
 
-echo "======================== Сортировка расческой ========================"
-for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
-do
-         time python comb_sort.py $length
-done
+# echo "======================== Сортировка расческой ========================"
+# for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
+# do
+#          time python comb_sort.py $length
+# done
 
-echo "======================== Сортировка Шелла ========================"
-for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
-do
-         time python shellsort.py $length
-done
+# echo "======================== Сортировка Шелла ========================"
+# for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
+# do
+#          time python shellsort.py $length
+# done
 
-echo "======================== Быстрая сортировка ========================"
-for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
-do
-         time python fast_sorting.py $length
-done
+# echo "======================== Быстрая сортировка ========================"
+# for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
+# do
+#          time python fast_sorting.py $length
+# done
 
-echo "======================== Пирамидальная сортировка ========================"
-for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
-do
-         time python heapsort.py $length
-done
+# echo "======================== Пирамидальная сортировка ========================"
+# for length in 1 2 3 4 5 10 15 20 25 30 50 75 100 250 500
+# do
+#          time python heapsort.py $length
+# done

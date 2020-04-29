@@ -15,7 +15,7 @@ class GenerateList(object):
 
 
 def main():
-	pass
+	print(GenerateList(int(sys.argv[1])).gen_lists())
 
 
 if __name__ == '__main__':
