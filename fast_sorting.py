@@ -1,3 +1,5 @@
+import sys
+from main import *
 
 
 count = 0
@@ -18,8 +20,13 @@ def get_fast_sort(lst):
 
 
 def main():
-    test_arr = [3301, 1984, 256, 13]
-    print(get_fast_sort(test_arr))
+    for length in list(map(int, sys.argv[1:])):  # цикл для всех
+        tmp_count = 0
+        average_count = 0
+        for current_list in GenerateList(length).gen_lists():  # цикл для получения одного из тысячи списков
+            tmp_obj = get_fast_sort(current_list)
+            tmp_count += tmp_obj[1]
+        print(f"Длина списка: {length} \tКоличество операций: {tmp_count}")
 
 
 if __name__ == '__main__':

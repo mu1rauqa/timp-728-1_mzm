@@ -1,3 +1,5 @@
+from main import *
+import sys
 
 
 class HeapSort(object):
@@ -45,9 +47,12 @@ class HeapSort(object):
 
 
 def main():
-    test_lst = [1, 2, 3]
-    obj = HeapSort(test_lst)
-    print(obj.get_result())
+    for length in list(map(int, sys.argv[1:])):  # цикл для всех
+        tmp_count = 0
+        for current_list in GenerateList(length).gen_lists():  # цикл для получения одного из тысячи списков
+            tmp_obj = HeapSort(current_list)
+            tmp_count += tmp_obj.get_result()[1]
+        print(f"Длина списка: {length} \tКоличество операций: {tmp_count}")
 
 
 if __name__ == '__main__':

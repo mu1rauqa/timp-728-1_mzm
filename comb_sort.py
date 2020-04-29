@@ -1,5 +1,5 @@
-import cProfile
-import datetime
+import sys
+from main import *
 
 
 class CombSort(object):
@@ -23,17 +23,18 @@ class CombSort(object):
                     swapped = True
 
     def get_result(self):
-        start_time = datetime.datetime.now()
         self.comb_sort()
-        end_time = datetime.datetime.now()
-        result_time = start_time - end_time
-        return [self._lst, self._count, result_time.microseconds]
+        return [self._lst, self._count]
 
 
 def main():
-    test_lst = [3, 2, 1]
-    obj = CombSort(test_lst)
+    for length in list(map(int, sys.argv[1:])):  # цикл для всех
+        tmp_count = 0
+        for current_list in GenerateList(length).gen_lists():  # цикл для получения одного из тысячи списков
+            tmp_obj = CombSort(current_list)
+            tmp_count += tmp_obj.get_result()[1]
+        print(f"Длина списка: {length} \tКоличество операций: {tmp_count}")
 
 
 if __name__ == '__main__':
-    cProfile.run('main()')
+    main()

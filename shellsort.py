@@ -1,3 +1,5 @@
+import sys
+from main import *
 
 
 class ShellSort(object):
@@ -9,7 +11,7 @@ class ShellSort(object):
         return "============ Сортировка Шелла ============"
 
     def shell_sort(self):
-        step = len(self.lst) // 2  # шаг 
+        step = len(self.lst) // 2  # шаг
         while step > 0:
             for i in range(step, len(self.lst)):
                 self._count += 1
@@ -29,9 +31,12 @@ class ShellSort(object):
 
 
 def main():
-    lst = [3, 1, 2]
-    obj = ShellSort(lst)
-    print(obj.get_result())
+    for length in list(map(int, sys.argv[1:])):  # цикл для всех
+        tmp_count = 0
+        for current_list in GenerateList(length).gen_lists():  # цикл для получения одного из тысячи списков
+            tmp_obj = ShellSort(current_list)
+            tmp_count += tmp_obj.get_result()[1]
+        print(f"Длина списка: {length} \tКоличество операций: {tmp_count}")
 
 
 if __name__ == '__main__':
