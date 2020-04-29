@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for (( i = 0; i < 100; i++ )); do
+  time python heapsort.py 100
+done
+ # for comb average value ~ 1240000
+ # for shell sort ~ 980000
+ # for fastsort ~ 66929344
+ # for heap ~ 965000
